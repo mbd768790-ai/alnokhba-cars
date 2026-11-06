@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>السيارات</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="myFunctions.js"></script>
+</head>
+<body>
+<div id="header"><h1>مكتب النخبة لتأجير السيارات</h1></div>
+<div id="nav"><ul><li><a href="home.html">الرئيسية</a></li><li><a href="AboutUs.html">من نحن</a></li><li><a href="Cars.html" class="active">السيارات</a></li><li><a href="#" id="exitlink">خروج</a></li></ul></div>
+<div id="maincontent">
+<h2>قائمة السيارات المتاحة</h2>
+<p>اختر سيارة أو أكثر ثم اضغط على "متابعة". ضع إشارة في خانة "إظهار التفاصيل" لعرض معلومات السيارة.</p>
+<table id="carstable">
+<thead><tr><th>الرمز</th><th>الصورة</th><th>الموديل</th><th>سنة الصنع</th><th>السعر اليومي</th><th>إظهار التفاصيل</th><th>اختيار</th></tr></thead>
+<tbody>
+<tr class="datarow">
+<td>CR-001</td>
+<td><img src="merceds.jpg" alt="mercedes g class" class="carimg" width="90" height="45" /></td>
+<td class="ltr">mercedes g class</td>
+<td>2025</td>
+<td>250000 ل.س</td>
+<td><input type="checkbox" class="showdetails" id="show1" value="CR-001" /></td>
+<td><input type="checkbox" class="selectbox" id="sel1" value="CR-001" /></td>
+</tr>
+<tr class="detailsrow" id="details-CR-001"><td colspan="7"><div class="detailsinner">نوع الوقود: بنزين | ناقل الحركة: أوتوماتيك | عدد المقاعد: 5 | عداد الكيلومترات: 18,500 كم | اللون: أبيض</div></td></tr>
+<tr class="datarow">
+<td>CR-002</td>
+<td><img src="kia fourti.jpg" alt="Kia fourti" class="carimg" width="90" height="45" /></td>
+<td class="ltr">Kia fourti</td>
+<td>2023</td>
+<td>400000 ل.س</td>
+<td><input type="checkbox" class="showdetails" id="show2" value="CR-002" /></td>
+<td><input type="checkbox" class="selectbox" id="sel2" value="CR-002" /></td>
+</tr>
+<tr class="detailsrow" id="details-CR-002"><td colspan="7"><div class="detailsinner">نوع الوقود: بنزين | ناقل الحركة: أوتوماتيك | عدد المقاعد: 5 | عداد الكيلومترات: 32,000 كم | اللون: رمادي</div></td></tr>
+<tr class="datarow">
+<td>CR-003</td>
+<td><img src="bmw.jpg" alt="BMW 739li" class="carimg" width="90" height="45" /></td>
+<td class="ltr">BMW 739li</td>
+<td>2022</td>
+<td>300000 ل.س</td>
+<td><input type="checkbox" class="showdetails" id="show3" value="CR-003" /></td>
+<td><input type="checkbox" class="selectbox" id="sel3" value="CR-003" /></td>
+</tr>
+<tr class="detailsrow" id="details-CR-003"><td colspan="7"><div class="detailsinner">نوع الوقود: بنزين | ناقل الحركة: أوتوماتيك | عدد المقاعد: 5 | عداد الكيلومترات: 9,000 كم | اللون: أسود</div></td></tr>
+<tr class="datarow">
+<td>CR-004</td>
+<td><img src="chevorlet.jpg" alt="Chevrolet taho" class="carimg" width="90" height="45" /></td>
+<td class="ltr">Chevrolet taho</td>
+<td>2024</td>
+<td>180000 ل.س</td>
+<td><input type="checkbox" class="showdetails" id="show4" value="CR-004" /></td>
+<td><input type="checkbox" class="selectbox" id="sel4" value="CR-004" /></td>
+</tr>
+<tr class="detailsrow" id="details-CR-004"><td colspan="7"><div class="detailsinner">نوع الوقود: بنزين | ناقل الحركة: يدوي | عدد المقاعد: 4 | عداد الكيلومترات: 61,000 كم | اللون: أحمر</div></td></tr>
+<tr class="datarow">
+<td>CR-005</td>
+<td><img src="lexus es350.jpg" alt="lexus es350" class="carimg" width="90" height="45" /></td>
+<td class="ltr">lexus es350</td>
+<td>2022</td>
+<td>350000 ل.س</td>
+<td><input type="checkbox" class="showdetails" id="show5" value="CR-005" /></td>
+<td><input type="checkbox" class="selectbox" id="sel5" value="CR-005" /></td>
+</tr>
+<tr class="detailsrow" id="details-CR-005"><td colspan="7"><div class="detailsinner">نوع الوقود: ديزل | ناقل الحركة: يدوي | عدد المقاعد: 5 | عداد الكيلومترات: 45,000 كم | اللون: أزرق</div></td></tr>
+</tbody>
+</table>
+<p><input type="button" id="continuebtn" class="btn" value="متابعة" /> <span id="selectmsg" class="error"></span></p>
+
+<div id="bookingsection">
+<h2>نموذج طلب الحجز</h2>
+<p>السيارات المختارة: <strong id="chosenlist"></strong></p>
+<form id="bookingform" action="#" method="post">
+<fieldset>
+<legend>بيانات مقدم الطلب</legend>
+<div class="formrow"><label for="fullname">الاسم الكامل:</label><input type="text" id="fullname" name="fullname" /><span class="error" id="err-fullname"></span></div>
+<div class="formrow"><label for="nationalid">الرقم الوطني (11 خانة):</label><input type="text" id="nationalid" name="nationalid" maxlength="11" /><span class="error" id="err-nationalid"></span></div>
+<div class="formrow"><label for="mobile">رقم الموبايل:</label><input type="text" id="mobile" name="mobile" maxlength="14" /><span class="error" id="err-mobile"></span></div>
+<div class="formrow"><label for="email">البريد الإلكتروني:</label><input type="text" id="email" name="email" /><span class="error" id="err-email"></span></div>
+</fieldset>
+<fieldset>
+<legend>فترة التأجير</legend>
+<div class="formrow"><label for="startdate">تاريخ البداية (yyyy-mm-dd):</label><input type="date" id="startdate" name="startdate"/><span class="error" id="err-startdate"></span></div>
+<div class="formrow"><label for="enddate">تاريخ النهاية (yyyy-mm-dd):</label><input type="date" id="enddate" name="enddate"/><span class="error" id="err-enddate"></span></div>
+</fieldset>
+<p><input type="submit" class="btn" value="إرسال" /></p>
+</form>
+</div>
+
+<div id="overlay"><div id="resultbox">
+<h2>ملخص طلب الحجز</h2>
+<div id="resultbody"></div>
+<p><input type="button" id="closeresult" class="btn" value="إغلاق" /></p>
+</div></div>
+</div>
+<div id="footer">جميع الحقوق محفوظة &#169; 2026 - مشروع مقرر تصميم وتطوير تطبيقات الوب - الجامعة الافتراضية السورية</div>
+</body>
+</html>
